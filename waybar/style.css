@@ -1,0 +1,82 @@
+/* Modern, Minimal Waybar Theme */
+
+* {
+    /*font-family: 'Inter', 'Font Awesome 6 Free', sans-serif;*/
+    font-family: 'JetBrains Mono Nerd Font', 'monospace';
+    font-size: 16px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.0); /* Transparent; */
+    color: #cdd6f4; /* Soft white/grey text */
+    border-radius: 12px;
+    margin: 8px 10px;
+}
+
+/* Base style for EVERY module - Unified look */
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #tray, #mode, #idle_inhibitor, #scratchpad, #bluetooth, #workspaces {
+    padding: 0 12px;
+    margin: 6px 3px;
+    border-radius: 8px; /* Slightly squarer pills look more modern */
+    background-color: #313244; /* Single, subtle grey background for all */
+    color: #cdd6f4; /* Unified text color */
+}
+
+/* WORKSPACES */
+#workspaces {
+    padding: 0px 8px; /* Tighter padding for the workspace container */
+}
+
+#workspaces button {
+    padding: 0 8px;
+    margin: 4px 2px;
+    color: #a6adc8; /* Dimmed text for inactive workspaces */
+    background-color: transparent;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* Accent Color 1: Pastel Blue for Active Workspaces */
+#workspaces button.focused {
+    background-color: #89b4fa;
+    color: #1e1e2e; /* Dark text on light background */
+}
+
+#workspaces button:hover {
+    background-color: #45475a;
+}
+
+/* Accent Color 2: Lavender for the Clock */
+#clock {
+    color: #cba6f7;
+    background-color: rgba(203, 166, 247, 0.15); /* Very faint purple tint */
+}
+
+/* Sway Mode (e.g., Resize) - Uses Primary Accent */
+#mode {
+    background-color: #89b4fa;
+    color: #1e1e2e;
+}
+
+/* ALERTS: Keep Red ONLY for things that need your immediate attention */
+#workspaces button.urgent,
+#battery.critical:not(.charging),
+#temperature.critical {
+    background-color: #f38ba8;
+    color: #1e1e2e;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+/* Clean up tray spacing */
+#tray {
+    padding: 0 8px;
+}
+
+/* Simple Blink Animation for Alerts */
+@keyframes blink {
+    to {
+        background-color: #cdd6f4;
+        color: #f38ba8;
+    }
+}

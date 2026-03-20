@@ -1,0 +1,8 @@
+allow_images=true
+image_size=40
+width=500
+lines=6
+insensitive=true
+mode=drun,run
+columns=1
+prompt=Search...

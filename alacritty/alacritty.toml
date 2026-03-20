@@ -1,0 +1,77 @@
+[general]
+# This imports the Tokyo Night colors. 
+# Make sure the file exists at this exact path!
+import = ["~/.config/alacritty/tokyo-night.toml"]
+
+# Reloads the terminal instantly when you save this file
+live_config_reload = true
+
+[env]
+# Alacritty usually sets this to "alacritty", but "xterm-256color" 
+# ensures maximum compatibility with older SSH servers.
+TERM = "xterm-256color"
+
+[window]
+# Padding adds "breathability" around your text (great for SwayFX)
+padding = { x = 12, y = 10 }
+dynamic_padding = true
+
+# Opacity for SwayFX Blur. 0.75 is a sweet spot for "frosted glass."
+opacity = 0.75
+
+# Set to "None" for a borderless, modern look
+decorations = "None"
+startup_mode = "Windowed"
+
+# On Wayland, 'general' is the app_id used for Sway window rules
+class = { instance = "Alacritty", general = "Alacritty" }
+
+[scrolling]
+history = 100000
+multiplier = 3
+
+[font]
+size = 11.5
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+
+[cursor]
+# "Beam" is modern and doesn't block the character you are typing
+style = { shape = "Beam", blinking = "Off" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+unfocused_hollow = true
+thickness = 0.16
+
+[terminal]
+# Allows apps like 'tmux' or 'neovim' to sync with your system clipboard
+osc52 = "CopyPaste"
+
+[mouse]
+hide_when_typing = true
+
+[hints]
+alphabet = "jfkdlsahgurieowpq"
+
+[[hints.enabled]]
+# This enables "Keyboard Mode" for URLs. 
+# Press Ctrl+Shift+O to highlight and open links without a mouse.
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh://|ftp://)[^\\u0000-\\u001F\\u007F-\\u009F<>\"\\s{-}\\^⟨⟩`\\\\]+"
+hyperlinks = true
+post_processing = true
+persist = false
+command = "xdg-open"
+binding = { key = "O", mods = "Control|Shift" }
+mouse = { mods = "None", enabled = true }
+
+[keyboard]
+bindings = [
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "Plus", mods = "Control", action = "IncreaseFontSize" },
+  { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+  { key = "Key0", mods = "Control", action = "ResetFontSize" },
+  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+  { key = "F11", action = "ToggleFullscreen" },
+]
