@@ -49,8 +49,8 @@ window#waybar {
 
 /* Accent Color 2: Lavender for the Clock */
 #clock {
-    color: #cba6f7;
-    background-color: rgba(203, 166, 247, 0.15); /* Very faint purple tint */
+    color: #89b4fa;
+    background-color: rgba(0, 0, 0, 0.5); /* Very faint purple tint */
 }
 
 /* Sway Mode (e.g., Resize) - Uses Primary Accent */

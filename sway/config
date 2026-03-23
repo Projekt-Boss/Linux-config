@@ -14,7 +14,7 @@ set $term alacritty
 set $menu env QT_QPA_PLATFORM=wayland QT_SCALE_FACTOR=1.25 QT_AUTO_SCREEN_SCALE_FACTOR=0 wofi --show drun | xargs swaymsg exec --
 
 # SwayOSD needs a "server" running in the background to catch the volume signals and draw the pop-up
-exec swayosd-server
+#exec swayosd-server i can leave this at the bottom of this config file
 
 include ~/.config/sway/keybinds.conf
 include ~/.config/sway/theme.conf
@@ -104,13 +104,16 @@ exec wl-paste --type image --watch cliphist store
 # Pick from history using wofi and cliphist
 bindsym $mod+i exec "cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
+# SwayOSD needs a "server" running in the background to catch the volume signals and draw the pop-up
+exec swayosd-server
+
 
 ##############
 # window rules
 
 assign [app_id="firefox"] workspace 2
 assign [app_id="org.kde.elisa"] workspace 4
-assign [app_id="org.kde.dolphin"] workspace 3
+assign [app_id="org.kde.dolphin"] workspace 5 
 
 
 

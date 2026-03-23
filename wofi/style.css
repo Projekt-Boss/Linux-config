@@ -1,175 +1,86 @@
-/* wofi style: modern / minimal to match your Waybar theme
-   Referenced colours & feel from your uploaded waybar style. :contentReference[oaicite:1]{index=1}
-*/
+/* Tokyo Night Storm – Wofi */
 
-/* Global font + base */
 * {
-    font-family: "JetBrains Mono Nerd Font", "Fira Code", "Inter", monospace;
-    font-weight: 600;
-    font-size: 16px;
-    color: #cdd6f4; /* primary text */
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
 }
 
-/* Main window */
+/* Window */
 window {
-    background: rgba(30, 30, 46, 0.92);
+    background-color: rgba(36, 40, 59, 0.65); /* #24283b + transparency */
     border-radius: 12px;
-    padding: 10px;
-    box-shadow: 0 10px 30px rgba(5, 6, 10, 0.55);
+    border: 2px solid #7aa2f7; /* accent blue */
 }
 
-/* Container that holds prompt & list */
-#main {
-    spacing: 8px;
+/* Outer box */
+#outer-box {
+    padding: 15px;
 }
 
-/* Prompt / entry area */
-entry, .entry {
-    -GtkEntry-inner-border: 0;
-    padding: 10px 12px;
-    border-radius: 10px;
-    background: rgba(49, 50, 68, 0.75); /* surface */
-    color: #cdd6f4;
-    border: 1px solid rgba(136, 142, 174, 0.08);
-    outline: none;
-}
-
-/* Placeholder text */
-entry:placeholder {
-    color: rgba(205, 214, 244, 0.55);
-    font-weight: 500;
-}
-
-/* The list that contains results */
-.list, .results, viewport {
-    margin-top: 6px;
-    margin-bottom: 6px;
+/* Input box */
+#input {
+    background-color: #1f2335;
+    color: #a9b1d6;
     border-radius: 8px;
-    background: transparent;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
 }
 
-/* Individual rows (entries) */
-.row {
+/* Input focus */
+#input:focus {
+    border: 2px solid #7aa2f7;
+}
+
+/* Entry list */
+#entry {
     padding: 8px 10px;
     border-radius: 8px;
-    margin: 4px 2px;
-    min-height: 44px;
-    transition: background 120ms ease, transform 120ms ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    margin: 2px 0;
 }
 
-/* Left side: icon / image */
-.row image, .row icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.03);
-    padding: 4px;
-    box-shadow: none;
-    flex-shrink: 0;
+/* Selected entry */
+#entry:selected {
+    background-color: #7aa2f7;
+    color: #1a1b26;
 }
 
-/* Text container inside row */
-.row .title {
-    font-size: 15px;
-    color: #cdd6f4;
-    margin-bottom: 1px;
-}
-.row .subtitle {
-    font-size: 12px;
-    color: rgba(198, 204, 226, 0.65);
+/* Entry hover */
+#entry:hover {
+    background-color: #3b4261;
 }
 
-/* Hover and selection */
-.row:hover {
-    background: rgba(69, 71, 90, 0.55);
-    transform: translateY(-1px);
+/* Text */
+#text {
+    color: #a9b1d6;
 }
 
-/* Active / selected entry (use accent) */
-.row:selected, .row:selected * {
-    background: rgba(137, 180, 250, 0.13);
-    color: #1e1e2e;
-}
-.row:selected image, .row:selected icon {
-    background: #89b4fa;
-    color: #1e1e2e;
+/* Selected text */
+#entry:selected #text {
+    color: #1a1b26;
 }
 
-/* Focused / highlighted (keyboard navigation) */
-.row:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(137, 180, 250, 0.06);
+/* Images/icons */
+#img {
+    margin-right: 10px;
 }
 
-/* Prompt icon (if used) */
-.prompt-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: rgba(49,50,68,0.65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Scroll */
+#scroll {
+    margin-top: 5px;
 }
 
-/* Separator lines */
-.separator {
-    height: 1px;
-    margin: 8px 0;
-    background: rgba(205,214,244,0.04);
-    border-radius: 1px;
+/* Prompt (Search...) */
+#input > image.left {
+    margin-right: 8px;
 }
 
-/* Categories / headers inside list */
-.header {
-    font-size: 12px;
-    font-weight: 700;
-    color: rgba(203,166,247,0.95); /* lavender accent for small headers */
-    padding: 6px 10px;
+/* Matching text highlight */
+#entry:selected #text {
+    font-weight: bold;
 }
 
-/* Buttons (if used in footer) */
-.button {
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: rgba(49,50,68,0.7);
-    border: 1px solid rgba(205,214,244,0.03);
-    color: #cdd6f4;
-}
-.button:hover { transform: translateY(-1px); }
-
-/* Scrollbar */
-scrollbar, scrollbar slider {
-    background: rgba(205,214,244,0.03);
-    border-radius: 6px;
-}
-scrollbar slider {
-    background: rgba(205,214,244,0.07);
-    min-height: 40px;
-}
-
-/* Small status text (e.g., "no results") */
-.status {
-    color: rgba(205,214,244,0.55);
-    font-size: 13px;
-    padding: 8px 10px;
-}
-
-/* Urgent/critical state - match Waybar's red alert */
-.row.urgent, .row.critical {
-    background: rgba(243, 139, 168, 0.12);
-    color: #1e1e2e;
-    animation: urgent-blink 1s steps(2, start) infinite;
-}
-@keyframes urgent-blink {
-    50% { background: rgba(243,139,168,0.18); }
-}
-
-/* Small device / HiDPI tweaks */
-@media (min-resolution: 2dppx) {
-    * { font-size: 16px; }
-    .row image, .row icon { width: 42px; height: 42px; }
+/* Subtle separator feel */
+#inner-box {
+    spacing: 5px;
 }
