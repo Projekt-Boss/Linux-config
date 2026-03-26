@@ -1,36 +1,7 @@
-A personal Linux desktop configuration repo for a clean, minimal, and highly customizable Sway-based setup.
-
-This repository collects my configuration files for the desktop, including:
-
-Sway / SwayFX window manager setup
-Waybar status bar styles and layouts
-Alacritty terminal themes
-Wofi launcher styling
-Fastfetch configuration
-Shell aliases and small helper scripts
-
-You will need to install the following packages:
-
-swayfx
-alacritty
-wofi
-fastfetch
-waybar
-nerd font
-swayosd
-grim
-slurp
-cliphist
-
-I am sure, that I am missing some packages
-
-Preview
-
-
-
 # swayfx-config
 
 A personal Linux desktop configuration repo for a clean, minimal, and highly customizable Sway-based setup.
+
 
 This repository collects my configuration files for the desktop, including:
 
@@ -141,6 +112,20 @@ Then use:
 ---
 
 ## Installation
+
+You will need to install the following packages:
+
+swayfx
+alacritty
+wofi
+fastfetch
+waybar
+nerd font
+swayosd
+grim
+slurp
+cliphist
+
 
 > Replace the paths below with your own system paths if needed.
 
