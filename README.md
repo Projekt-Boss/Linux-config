@@ -22,69 +22,19 @@ Add screenshots of your desktop here so people can see the theme, bar, launcher,
 ![Waybar and wallpaper](Pictures/waybar-overview.png)
 ![Wofi launcher](Pictures/wofi-preview.png)
 
-If you do not have these files yet, create them first and replace the paths above with the real image filenames in the repository.
-
----
-
-## What is included
-
-### `sway/`
-
-Main Sway configuration files.
-
-* `config` — main Sway config
-* `keybinds.conf` — keybindings
-* `theme.conf` — theme variables and colors
-* `themeTokyo.conf` — alternate Tokyo Night theme
-* `changeWallpaper.sh` — wallpaper switcher script
-
-### `waybar/`
-
-Waybar configuration and style files.
-
-* `config.jsonc` — bar layout and modules
-* `style.css` — visual styling
-* `staticStyle`, `coluredStyle`, `unixpStyle` — alternate style presets
-
-### `alacritty/`
-
-Terminal configuration and themes.
-
-* `alacritty.toml` — main Alacritty configuration
-* several theme files such as `dracula.toml`, `nord.toml`, `tokyo-night.toml`, and more
-
-### `wofi/`
-
-Launcher configuration and CSS.
-
-* `config` — launcher settings
-* `style.css` — main style
-* `style1` — alternate style
-
-### `bashrc.d/`
-
-Shell aliases and small shell customizations.
-
-### Other files
-
-* `fastfetch-config.jsonc` — Fastfetch configuration
-* `gitBackupConfig.sh` — backup helper script
-* `Pictures/` — wallpapers and screenshots used by the setup
-
----
 
 ## Screenshot gallery
 
 
 ```md
-![Alt text](Pictures/waybar-blue-white.png)
+![waybar](Pictures/waybar-blue-white.png)
 ```
 
 
 ```md
 ![Sway desktop](Pictures/improved-fastfetch.png)
 ```
-
+![Desktop overview](Pictures/wofi.png)
 
 ---
 
@@ -136,7 +86,6 @@ swaymsg reload
 ```
 
 ---
-
 
 
 ## Notes
