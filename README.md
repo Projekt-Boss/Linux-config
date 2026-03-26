@@ -75,39 +75,16 @@ Shell aliases and small shell customizations.
 
 ## Screenshot gallery
 
-To showcase the desktop properly, put your images in a folder inside the repo, then reference them with Markdown like this:
 
 ```md
-![Alt text](Pictures/your-image.png)
+![Alt text](Pictures/waybar-blue-white.png)
 ```
 
-Example:
 
 ```md
-![Sway desktop](Pictures/desktop-overview.png)
+![Sway desktop](Pictures/improved-fastfetch.png)
 ```
 
-### Good places to store images
-
-* `Pictures/`
-* `assets/`
-* `assets/screenshots/`
-
-A clean option is:
-
-```text
-assets/
-└── screenshots/
-    ├── desktop.png
-    ├── waybar.png
-    └── wofi.png
-```
-
-Then use:
-
-```md
-![Desktop](assets/screenshots/desktop.png)
-```
 
 ---
 
@@ -126,8 +103,6 @@ grim
 slurp
 cliphist
 
-
-> Replace the paths below with your own system paths if needed.
 
 1. Clone the repository:
 
@@ -162,36 +137,10 @@ swaymsg reload
 
 ---
 
-## Customization
 
-You can easily adjust:
-
-* colors and themes in `sway/theme.conf`
-* keybindings in `sway/keybinds.conf`
-* bar appearance in `waybar/style.css`
-* terminal themes in `alacritty/*.toml`
-* launcher look in `wofi/style.css`
-
----
 
 ## Notes
 
 This repository is meant as a personal desktop configuration and theme archive. Feel free to use parts of it as a starting point for your own setup.
 
 ---
-
-## License
-
-Add a license here if you want others to reuse your configuration.
-
----
-
-## Tip for GitHub
-
-GitHub will render the images directly in the README as long as the paths are correct and the files are committed to the repository.
-
-If an image does not show up, check:
-
-* the file path is correct
-* the filename capitalization matches exactly
-* the image file was pushed to GitHub
